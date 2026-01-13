@@ -23,6 +23,6 @@ RUN python3 -m venv bandit-env && \
 
 RUN mkdir results
 
-# RUN chmod +x Ai_sast_analysis/exec_sast.sh
+RUN chmod +x Ai_sast_analysis/run_sast.sh
 
 CMD ["/bin/bash", "-c", "source bandit-env/bin/activate && exec bash"]
