@@ -1,0 +1,689 @@
+[
+  {
+    "filename": ".\\vulnerable_files\\files\\command_injection.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-78",
+        "line of Code": 18
+      },
+      {
+        "label": "CWE-78",
+        "line of Code": 18
+      },
+      {
+        "label": "CWE-78",
+        "line of Code": 18
+      },
+      {
+        "label": "CWE-489",
+        "line of Code": 35
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-020_codeql_1.py",
+    "ai_predictions": [
+      {
+        "label": "11(CWE-79)",
+        "line of Code": 11
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-020_codeql_2.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-502",
+        "line of Code": 13
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-022_author_2.py",
+    "ai_predictions": []
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-022_codeql_1.py",
+    "ai_predictions": [
+      {
+        "label": "7(CWE-22)",
+        "line of Code": 8
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-078_codeql_1.py",
+    "ai_predictions": [
+      {
+        "label": "7(CWE-78)",
+        "line of Code": 8
+      },
+      {
+        "label": "8(CWE-78)",
+        "line of Code": 8
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-079_codeql_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-79",
+        "line of Code": 13
+      },
+      {
+        "label": "CWE-79",
+        "line of Code": 15
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-079_codeql_2.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-79",
+        "line of Code": 12
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-079_sonar_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-79",
+        "line of Code": 12
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-080_author_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-79",
+        "line of Code": 11
+      },
+      {
+        "label": "CWE-79",
+        "line of Code": 11
+      },
+      {
+        "label": "CWE-79",
+        "line of Code": 11
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-089_codeql_1.py",
+    "ai_predictions": [
+      {
+        "label": "8(CWE-89)",
+        "line of Code": 8
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-094_author_1.py",
+    "ai_predictions": [
+      {
+        "label": "5(CWE-95)",
+        "line of Code": 6
+      },
+      {
+        "label": "6(CWE-95)",
+        "line of Code": 6
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-094_codeql_1.py",
+    "ai_predictions": [
+      {
+        "label": "9(CWE-95)",
+        "line of Code": 9
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-094_sonar_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-95",
+        "line of Code": 10
+      },
+      {
+        "label": "CWE-95",
+        "line of Code": 11
+      },
+      {
+        "label": "CWE-95",
+        "line of Code": 11
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-095_author_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-95",
+        "line of Code": 5
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-116_author_1.py",
+    "ai_predictions": []
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-200_author_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-89",
+        "line of Code": 12
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-215_codeql_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-489",
+        "line of Code": 12
+      },
+      {
+        "label": "CWE-668",
+        "line of Code": 12
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-269_mitre_1.py",
+    "ai_predictions": [
+      {
+        "label": "13(CWE-276)",
+        "line of Code": 13
+      },
+      {
+        "label": "14(CWE-276)",
+        "line of Code": 14
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-295_codeql_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-295",
+        "line of Code": 9
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-297_sonar_1.py",
+    "ai_predictions": [
+      {
+        "label": "7(CWE-295)",
+        "line of Code": 7
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-312_codeql_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-79",
+        "line of Code": 11
+      },
+      {
+        "label": "CWE-614",
+        "line of Code": 12
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-319_author_2.py",
+    "ai_predictions": [
+      {
+        "label": "7(CWE-319)",
+        "line of Code": 7
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-326_author_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-326",
+        "line of Code": 9
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-326_author_2.py",
+    "ai_predictions": [
+      {
+        "label": "7(CWE-326)",
+        "line of Code": 7
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-327_codeql_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-327",
+        "line of Code": 7
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-327_codeql_2.py",
+    "ai_predictions": [
+      {
+        "label": "8(CWE-326)",
+        "line of Code": 8
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-327_codeql_4.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-327",
+        "line of Code": 7
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-347_sonar_2.py",
+    "ai_predictions": [
+      {
+        "label": "7(CWE-287)",
+        "line of Code": 7
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-425_author_1.py",
+    "ai_predictions": [
+      {
+        "label": "10(CWE-79)",
+        "line of Code": 10
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-502_author_1.py",
+    "ai_predictions": [
+      {
+        "label": "11(CWE-502)",
+        "line of Code": 6
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-502_codeql_1.py",
+    "ai_predictions": [
+      {
+        "label": "8(CWE-502)",
+        "line of Code": 8
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-502_mitre_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-502",
+        "line of Code": 9
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-502_sonar_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-502",
+        "line of Code": 11
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-522_pearce_1.py",
+    "ai_predictions": [
+      {
+        "label": "16(CWE-327)",
+        "line of Code": 17
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-601_codeql_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-601",
+        "line of Code": 11
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-601_sonar_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-601",
+        "line of Code": 9
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-601_sonar_2.py",
+    "ai_predictions": [
+      {
+        "label": "8(CWE-601)",
+        "line of Code": 7
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-605_author_1.py",
+    "ai_predictions": []
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-643_sonar_1.py",
+    "ai_predictions": [
+      {
+        "label": "17(CWE-79)",
+        "line of Code": 17
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-732_author_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-276",
+        "line of Code": 8
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-759_mitre_1.py",
+    "ai_predictions": [
+      {
+        "label": "6(CWE-327)",
+        "line of Code": 7
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-918_codeql_1.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-918",
+        "line of Code": 13
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\CWE-918_codeql_2.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-918",
+        "line of Code": 11
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\ensure_saved_scope.py",
+    "ai_predictions": [
+      {
+        "label": "25(CWE-489)",
+        "line of Code": 25
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\inter_command_injection.py",
+    "ai_predictions": [
+      {
+        "label": "15(CWE-78)",
+        "line of Code": 24
+      },
+      {
+        "label": "38(CWE-489)",
+        "line of Code": 40
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\inter_command_injection_2.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-78",
+        "line of Code": 22
+      },
+      {
+        "label": "CWE-78",
+        "line of Code": 22
+      },
+      {
+        "label": "CWE-78",
+        "line of Code": 22
+      },
+      {
+        "label": "CWE-489",
+        "line of Code": 39
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\multi_chain.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-78",
+        "line of Code": 16
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\path_traversal.py",
+    "ai_predictions": [
+      {
+        "label": "15(CWE-489)",
+        "line of Code": 16
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\path_traversal_sanitised.py",
+    "ai_predictions": [
+      {
+        "label": "15(CWE-489)",
+        "line of Code": 16
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\path_traversal_sanitised_2.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-489",
+        "line of Code": 15
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\render_ids.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-489",
+        "line of Code": 17
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\simple_vulnerability.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-95",
+        "line of Code": 4
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\sqli.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-89",
+        "line of Code": 26
+      },
+      {
+        "label": "CWE-489",
+        "line of Code": 42
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\XSS.py",
+    "ai_predictions": [
+      {
+        "label": "9(CWE-79)",
+        "line of Code": 9
+      },
+      {
+        "label": "13(CWE-489)",
+        "line of Code": 13
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\XSS_assign_to_other_var.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-79",
+        "line of Code": 11
+      },
+      {
+        "label": "CWE-489",
+        "line of Code": 15
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\XSS_call.py",
+    "ai_predictions": [
+      {
+        "label": "22(CWE-489)",
+        "line of Code": 22
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\XSS_form.py",
+    "ai_predictions": [
+      {
+        "label": "15(CWE-79)",
+        "line of Code": 15
+      },
+      {
+        "label": "16(CWE-614)",
+        "line of Code": 16
+      },
+      {
+        "label": "21(CWE-489)",
+        "line of Code": 21
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\XSS_no_vuln.py",
+    "ai_predictions": [
+      {
+        "label": "14(CWE-489)",
+        "line of Code": 14
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\XSS_reassign.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-79",
+        "line of Code": 11
+      },
+      {
+        "label": "CWE-489",
+        "line of Code": 15
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\XSS_sanitised.py",
+    "ai_predictions": [
+      {
+        "label": "16(CWE-489)",
+        "line of Code": 16
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\XSS_url.py",
+    "ai_predictions": [
+      {
+        "label": "9(CWE-79)",
+        "line of Code": 10
+      },
+      {
+        "label": "13(CWE-489)",
+        "line of Code": 14
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\XSS_variable_assign.py",
+    "ai_predictions": [
+      {
+        "label": "CWE-79",
+        "line of Code": 12
+      },
+      {
+        "label": "CWE-489",
+        "line of Code": 16
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\XSS_variable_assign_no_vuln.py",
+    "ai_predictions": [
+      {
+        "label": "16(CWE-489)",
+        "line of Code": 16
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\XSS_variable_multiple_assign.py",
+    "ai_predictions": [
+      {
+        "label": "15(CWE-79)",
+        "line of Code": 16
+      },
+      {
+        "label": "20(CWE-489)",
+        "line of Code": 21
+      }
+    ]
+  },
+  {
+    "filename": ".\\vulnerable_files\\files\\yield.py",
+    "ai_predictions": [
+      {
+        "label": "16(CWE-78)",
+        "line of Code": 16
+      },
+      {
+        "label": "21(CWE-489)",
+        "line of Code": 21
+      }
+    ]
+  }
+]
