@@ -50,5 +50,6 @@ def getTrueLabelsDataframe():
     unified_df['true_label'] = unified_df['true_label'].str.replace(', ', ',')
     unified_df['true_label'] = unified_df['true_label'].apply(lambda x: ','.join(fu.remove_duplicates(x)))
 
+    unified_df = unified_df.rename(columns={'Filename': 'filename'})
 
     return unified_df

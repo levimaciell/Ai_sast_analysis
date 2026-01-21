@@ -60,6 +60,7 @@ def main():
 
     client = genai.Client(api_key=args.k)
 
+
     for filePath in filesToProcess:
         processed += 1
 
@@ -69,11 +70,14 @@ def main():
             code = f.read()
 
         
-        labels = labelsByFile.get(filename)
+        labels = []
+        for item in labelsByFile.get(filename):
+            labels.append(item['cwe'])
+
         prompt = build_prompt(code, labels)
 
         print(f"\n[{processed}/{total}] 🔹 Chamando IA para: {filePath} ...")
-
+        
         success = False
         last_error = None
         raw = None
@@ -81,7 +85,6 @@ def main():
         for attempt in range(1, MAX_TRIES, + 1):
             try:
                 print(f"🔁 Tentativa {attempt}/{MAX_TRIES}")
-
                 response = client.models.generate_content(
                     model=MODEL,
                     contents=prompt,
@@ -121,6 +124,7 @@ def main():
             "filename": filePath,
             "ai_predictions": ai_result
         })
+            
     
     with open(args.o, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)

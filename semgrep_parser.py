@@ -43,7 +43,10 @@ def main():
         metadata = issue.get("extra").get("metadata")
         cweId = extract_cwe(metadata.get("cwe"))
 
-        cweFormatada = f"{line}({cweId})"
+        objCwe = {
+            "cwe": cweId,
+            "line": line
+        }
 
         if filename in seen_files:
             item = next(
@@ -52,14 +55,14 @@ def main():
             )
 
             if(item):
-                item["labels"].append(cweFormatada)
+                item["labels"].append(objCwe)
             else:
                 raise Exception("Inconsistency found. the file is in seen files but the dict was not availiable")
 
         else:            
             fileInfo = {
                 "filename": filename,
-                "labels": [cweFormatada]
+                "labels": [objCwe]
             }
 
             labels.append(fileInfo)
