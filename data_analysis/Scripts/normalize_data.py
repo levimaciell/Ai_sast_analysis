@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import os
 from pathlib import Path
 import re
 from Scripts import functions as fu
@@ -53,3 +54,46 @@ def getTrueLabelsDataframe():
     unified_df = unified_df.rename(columns={'Filename': 'filename'})
 
     return unified_df
+
+def mergeCweAndLine(list):
+    return ",".join(
+        str(f'{d['line']}({d['cwe']})')
+        for d in list
+    )
+
+def getCleanDataframe(path):
+    df = pd.read_json(path)
+    df['labels'] = df['labels'].apply(mergeCweAndLine)
+
+    return df
+
+def getCleanAiDataframe(path):
+    df = pd.read_json(path)
+    df['filename'] = df['filename'].apply(os.path.basename)
+
+    df['ai_predictions'] = df['ai_predictions'].apply(clearAiPreds)
+
+    return df
+
+def clearAiPreds(list):
+
+    if not list:
+        return np.nan
+
+    return ",".join(
+        str(f'{d['line of Code']}({d['label']})')
+        for d in list
+    )
+
+def apply_normalizations(df, column):
+    df[column] = df[column].astype(str)
+    df[column] = df[column].apply(lambda x: re.sub(r'\b0(\d{1})\b|\b0(\d{2})\b', r'\1\2', x))
+    df[column] = df[column].apply(lambda x: re.sub(r'(CWE-\d+)-0(\d)', r'\1-\2', x))
+    df[column] = df[column].apply(lambda x: ','.join(remove_duplicates(x)))
+    return df
+  
+def remove_duplicates(cwe_list):
+    if isinstance(cwe_list, float) and np.isnan(cwe_list):
+        return []
+    else:
+        return sorted(list(set(cwe_list.split(','))))
