@@ -4,6 +4,7 @@ import os
 from google import genai
 from google.genai import types
 import time
+from ai_callers.GeminiCaller import GeminiCaller
 
 MAX_TRIES = 5
 MODEL = "gemini-2.5-flash"
@@ -85,16 +86,9 @@ def main():
         for attempt in range(1, MAX_TRIES, + 1):
             try:
                 print(f"🔁 Tentativa {attempt}/{MAX_TRIES}")
-                response = client.models.generate_content(
-                    model=MODEL,
-                    contents=prompt,
-                    config=types.GenerateContentConfig(temperature=TEMPERATURE)
-                )
 
-                raw = response.text.strip()
-
-                if raw.startswith("```"):
-                    raw = raw.replace("```json", "").replace("```", "").strip()
+                Caller = GeminiCaller(args.k)
+                raw = Caller.requestAi(prompt) 
 
                 ai_result = json.loads(raw)
                 success = True
@@ -107,6 +101,7 @@ def main():
             except Exception as e:
                 last_error = str(e)
                 print(f"   ⚠️ Erro de requisição: {last_error}")
+                print(e)
 
             if attempt < MAX_TRIES:
                 time.sleep(RETRY_DELAY)
