@@ -1,14 +1,10 @@
 import argparse
 import json
 import os
-from google import genai
-from google.genai import types
 import time
-from ai_callers.GeminiCaller import GeminiCaller
+from ai_callers import GeminiCaller, ChatGptCaller
 
 MAX_TRIES = 5
-MODEL = "gemini-2.5-flash"
-TEMPERATURE = 0.0
 RETRY_DELAY = 5
 
 def build_prompt(vul_code: str, labels2: list[str]) -> str:
@@ -23,6 +19,19 @@ def build_prompt(vul_code: str, labels2: list[str]) -> str:
         "as the keys for each element. Only answer with JSON."
     )
 
+def getAiCaller(ai, apiKey):
+    callers = {
+        "gemini": GeminiCaller(apiKey),
+        "chat_gpt": ChatGptCaller(apiKey)
+    }
+
+    try:
+        return callers[ai]
+    
+    except Exception:
+        print(f"Erro ao tentar pegar caller da IA. Utilize os callers disponíveis: {", ".join(callers.keys())}")
+        raise
+
 def main():
     parser = argparse.ArgumentParser(description="Executa IA como assistente SAST em todos os arquivos python que existirem em um diretório")
 
@@ -30,8 +39,11 @@ def main():
     parser.add_argument("-l", required=True, help="Arquivo json contendo a análise feita pela ferramenta de sast")
     parser.add_argument("-k", required=True, help="Chave da API do Gemini")
     parser.add_argument("-o", required=True, help="Caminho do output gerado pela IA")
+    parser.add_argument("-ai", required=True, help="Nome da IA a ser utilizada")
 
     args = parser.parse_args()
+
+    Caller = getAiCaller(args.ai, args.k)
 
     with open(args.l, "r", encoding="utf-8") as f:
         listaSast = json.load(f)
@@ -59,9 +71,6 @@ def main():
     errors = []
     processed = 0
 
-    client = genai.Client(api_key=args.k)
-
-
     for filePath in filesToProcess:
         processed += 1
 
@@ -70,7 +79,6 @@ def main():
         with open(filePath, "r", encoding="utf-8") as f:
             code = f.read()
 
-        
         labels = []
         for item in labelsByFile.get(filename):
             labels.append(item['cwe'])
@@ -87,7 +95,6 @@ def main():
             try:
                 print(f"🔁 Tentativa {attempt}/{MAX_TRIES}")
 
-                Caller = GeminiCaller(args.k)
                 raw = Caller.requestAi(prompt) 
 
                 ai_result = json.loads(raw)
