@@ -95,9 +95,8 @@ def main():
             try:
                 print(f"🔁 Tentativa {attempt}/{MAX_TRIES}")
 
-                raw = Caller.requestAi(prompt) 
-
-                ai_result = json.loads(raw)
+                ai_result = Caller.requestAi(prompt)
+                 
                 success = True
                 break
             

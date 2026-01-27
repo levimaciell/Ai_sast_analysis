@@ -1,7 +1,6 @@
 from ai_callers.AiCallerStrategy import AiCallerStrategy
-from ai_callers.Structures import AiResults
 from google import genai
-import json
+from google.genai import types
 
 MODEL = "gemini-2.5-flash"
 TEMPERATURE = 0.0
@@ -13,18 +12,15 @@ class GeminiCaller(AiCallerStrategy):
         self.api_key = api_key
 
     def requestAi(self, prompt):
-
         response = self.client.models.generate_content(
             model=MODEL,
             contents=prompt,
-            config={
-                'temperature': TEMPERATURE,
-                'response_mime_type': 'application/json',
-                'response_json_schema': AiResults.model_json_schema()
-            }
+            config=types.GenerateContentConfig(temperature=TEMPERATURE)
         )
 
         raw = response.text.strip()
-        resultsList = json.loads(raw)
 
-        return resultsList['results']
+        if raw.startswith("```"):
+            raw = raw.replace("```json", "").replace("```", "").strip()
+
+        return raw

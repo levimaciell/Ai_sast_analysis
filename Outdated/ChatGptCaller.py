@@ -1,7 +1,6 @@
 from ai_callers.AiCallerStrategy import AiCallerStrategy
-from ai_callers.Structures import AiResults
+from pydantic import BaseModel, Field, RootModel
 from openai import OpenAI
-import json
 
 TEMPERATURE=0.0
 MODEL="gpt-5.2"
@@ -14,13 +13,10 @@ class ChatGptCaller(AiCallerStrategy):
 
     def requestAi(self, prompt):
 
-        response = self.client.responses.parse(
+        response = self.client.responses.create(
             model=MODEL,
             input=prompt,
-            temperature=TEMPERATURE,
-            text_format=AiResults
+            temperature=TEMPERATURE
         )
 
-        resultsList = json.loads(response.output_text)
-        
-        return resultsList['results']
+        return response.output_text
