@@ -20,7 +20,8 @@ RUN python3 -m venv bandit-env && \
     pip install bandit && \
     pip install semgrep && \
     pip install google-genai &&\
-    pip install openai
+    pip install openai &&\
+    pip install anthropic
 
 RUN mkdir results
 

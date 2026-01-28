@@ -2,7 +2,7 @@ import argparse
 import json
 import os
 import time
-from ai_callers import GeminiCaller, ChatGptCaller, DeepseekCaller
+from ai_callers import GeminiCaller, ChatGptCaller, DeepseekCaller, ClaudeCaller
 
 MAX_TRIES = 5
 RETRY_DELAY = 5
@@ -23,7 +23,8 @@ def getAiCaller(ai, apiKey):
     callers = {
         "gemini": GeminiCaller(apiKey),
         "chat_gpt": ChatGptCaller(apiKey),
-        "deepseek": DeepseekCaller(apiKey)
+        "deepseek": DeepseekCaller(apiKey),
+        "claude": ClaudeCaller(apiKey)
     }
 
     try:
