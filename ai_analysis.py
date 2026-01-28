@@ -2,7 +2,7 @@ import argparse
 import json
 import os
 import time
-from ai_callers import GeminiCaller, ChatGptCaller
+from ai_callers import GeminiCaller, ChatGptCaller, DeepseekCaller
 
 MAX_TRIES = 5
 RETRY_DELAY = 5
@@ -22,7 +22,8 @@ def build_prompt(vul_code: str, labels2: list[str]) -> str:
 def getAiCaller(ai, apiKey):
     callers = {
         "gemini": GeminiCaller(apiKey),
-        "chat_gpt": ChatGptCaller(apiKey)
+        "chat_gpt": ChatGptCaller(apiKey),
+        "deepseek": DeepseekCaller(apiKey)
     }
 
     try:
@@ -44,6 +45,7 @@ def main():
     args = parser.parse_args()
 
     Caller = getAiCaller(args.ai, args.k)
+    print(f'Utilizando {args.ai}')
 
     with open(args.l, "r", encoding="utf-8") as f:
         listaSast = json.load(f)
