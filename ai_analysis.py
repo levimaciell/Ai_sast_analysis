@@ -19,34 +19,34 @@ def build_prompt(vul_code: str, labels2: list[str]) -> str:
         "as the keys for each element. Only answer with JSON."
     )
 
-def getAiCaller(ai, apiKey):
+def getAiCaller(ai: str):
     callers = {
-        "gemini": GeminiCaller(apiKey),
-        "chat_gpt": ChatGptCaller(apiKey),
-        "deepseek": DeepseekCaller(apiKey),
-        "claude": ClaudeCaller(apiKey)
+        "gemini": GeminiCaller,
+        "chat_gpt": ChatGptCaller,
+        "deepseek": DeepseekCaller,
+        "claude": ClaudeCaller
     }
 
-    try:
-        return callers[ai]
+    try:        
+        return callers[ai]()
     
-    except Exception:
-        print(f"Erro ao tentar pegar caller da IA. Utilize os callers disponíveis: {", ".join(callers.keys())}")
-        raise
+    except KeyError:
+        raise ValueError(
+            f"IA inválida: {ai}. Use uma das seguintes: {', '.join(callers)}"
+        )
 
 def main():
     parser = argparse.ArgumentParser(description="Executa IA como assistente SAST em todos os arquivos python que existirem em um diretório")
 
     parser.add_argument("-sc", required=True, help="Diretório contendo o código fonte para a IA avaliar")
     parser.add_argument("-l", required=True, help="Arquivo json contendo a análise feita pela ferramenta de sast")
-    parser.add_argument("-k", required=True, help="Chave da API do Gemini")
     parser.add_argument("-o", required=True, help="Caminho do output gerado pela IA")
     parser.add_argument("-ai", required=True, help="Nome da IA a ser utilizada")
 
     args = parser.parse_args()
 
-    Caller = getAiCaller(args.ai, args.k)
-    print(f'Utilizando {args.ai}')
+    Caller = getAiCaller(args.ai)
+    print(f'{'='*10} {args.ai} SELECIONADO PARA ANÁLISES {'='*10}')
 
     with open(args.l, "r", encoding="utf-8") as f:
         listaSast = json.load(f)

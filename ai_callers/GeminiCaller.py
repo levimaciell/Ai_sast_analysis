@@ -2,15 +2,18 @@ from ai_callers.AiCallerStrategy import AiCallerStrategy
 from ai_callers.Structures import AiResults
 from google import genai
 import json
+from config import settings
 
 MODEL = "gemini-2.5-flash"
 TEMPERATURE = 0.0
 
 class GeminiCaller(AiCallerStrategy):
 
-    def __init__(self, api_key):
-        self.client = genai.Client(api_key=api_key)
-        self.api_key = api_key
+    def __init__(self):
+        if not settings.GEMINI_API_KEY:
+            raise ValueError(f"GEMINI_API_KEY não configurada")
+
+        self.client = genai.Client(api_key=settings.GEMINI_API_KEY)
 
     def requestAi(self, prompt):
 

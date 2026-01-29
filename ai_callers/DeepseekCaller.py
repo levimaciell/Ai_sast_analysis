@@ -1,6 +1,7 @@
 from ai_callers.AiCallerStrategy import AiCallerStrategy
 from openai import OpenAI
 import json
+from config import settings
 
 BASE_URL = 'https://api.deepseek.com'
 MODEL = 'deepseek-chat'
@@ -20,8 +21,11 @@ EXAMPLE_JSON = '''
 
 class DeepseekCaller(AiCallerStrategy):
 
-    def __init__(self, api_key):
-        self.client = OpenAI(api_key=api_key, base_url=BASE_URL)
+    def __init__(self):
+        if not settings.DEEPSEEK_API_KEY:
+            raise ValueError(f"DEEPSEEK_API_KEY não configurada")
+
+        self.client = OpenAI(api_key=settings.DEEPSEEK_API_KEY, base_url=BASE_URL)
 
     def requestAi(self, prompt):
 
