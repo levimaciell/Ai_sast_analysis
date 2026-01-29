@@ -3,28 +3,21 @@ FROM alpine:3.22.2
 RUN apk update && apk add --no-cache \
     python3 \
     py3-pip \
-    git \
-    bash \
-    nano \
-    vim
+    bash 
 
 RUN ln -sf python3 /usr/bin/python
 
 WORKDIR /app
 
-RUN git clone https://github.com/levimaciell/Ai_sast_analysis.git
+COPY . /app
 
 RUN python3 -m venv bandit-env && \
     . bandit-env/bin/activate && \
     pip install --upgrade pip && \
-    pip install bandit && \
-    pip install semgrep && \
-    pip install google-genai &&\
-    pip install openai &&\
-    pip install anthropic
+    pip install -r requirements.txt
 
 RUN mkdir results
 
-RUN chmod +x Ai_sast_analysis/run_sast.sh
+RUN chmod +x run_sast.sh
 
 CMD ["/bin/bash", "-c", "source bandit-env/bin/activate && exec bash"]
