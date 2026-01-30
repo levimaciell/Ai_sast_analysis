@@ -1,0 +1,744 @@
+[
+  {
+    "filename": "CWE-020_codeql_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 11
+      }
+    ]
+  },
+  {
+    "filename": "CWE-020_codeql_2.py",
+    "labels": [
+      {
+        "cwe": "CWE-502",
+        "line": 15
+      },
+      {
+        "cwe": "CWE-502",
+        "line": 15
+      }
+    ]
+  },
+  {
+    "filename": "CWE-022_author_2.py",
+    "labels": [
+      {
+        "cwe": "CWE-939",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "filename": "CWE-022_codeql_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-22",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "filename": "CWE-078_codeql_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-78",
+        "line": 7
+      },
+      {
+        "cwe": "CWE-78",
+        "line": 8
+      }
+    ]
+  },
+  {
+    "filename": "CWE-079_codeql_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 13
+      },
+      {
+        "cwe": "CWE-79",
+        "line": 15
+      }
+    ]
+  },
+  {
+    "filename": "CWE-079_codeql_2.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 11
+      }
+    ]
+  },
+  {
+    "filename": "CWE-079_sonar_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 12
+      }
+    ]
+  },
+  {
+    "filename": "CWE-080_author_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 11
+      },
+      {
+        "cwe": "CWE-79",
+        "line": 11
+      },
+      {
+        "cwe": "CWE-79",
+        "line": 11
+      }
+    ]
+  },
+  {
+    "filename": "CWE-089_codeql_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-89",
+        "line": 8
+      },
+      {
+        "cwe": "CWE-89",
+        "line": 8
+      }
+    ]
+  },
+  {
+    "filename": "CWE-094_author_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-95",
+        "line": 5
+      },
+      {
+        "cwe": "CWE-95",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "filename": "CWE-094_codeql_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-95",
+        "line": 9
+      }
+    ]
+  },
+  {
+    "filename": "CWE-094_sonar_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-95",
+        "line": 10
+      },
+      {
+        "cwe": "CWE-95",
+        "line": 11
+      },
+      {
+        "cwe": "CWE-95",
+        "line": 11
+      }
+    ]
+  },
+  {
+    "filename": "CWE-095_author_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-95",
+        "line": 5
+      }
+    ]
+  },
+  {
+    "filename": "CWE-116_author_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-93",
+        "line": 5
+      }
+    ]
+  },
+  {
+    "filename": "CWE-200_author_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-89",
+        "line": 13
+      }
+    ]
+  },
+  {
+    "filename": "CWE-215_codeql_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-668",
+        "line": 12
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 12
+      }
+    ]
+  },
+  {
+    "filename": "CWE-269_mitre_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-276",
+        "line": 13
+      },
+      {
+        "cwe": "CWE-276",
+        "line": 14
+      }
+    ]
+  },
+  {
+    "filename": "CWE-295_codeql_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-295",
+        "line": 8
+      }
+    ]
+  },
+  {
+    "filename": "CWE-297_sonar_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-295",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "filename": "CWE-312_codeql_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 11
+      },
+      {
+        "cwe": "CWE-614",
+        "line": 12
+      }
+    ]
+  },
+  {
+    "filename": "CWE-319_author_2.py",
+    "labels": [
+      {
+        "cwe": "CWE-319",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "filename": "CWE-326_author_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-326",
+        "line": 9
+      }
+    ]
+  },
+  {
+    "filename": "CWE-326_author_2.py",
+    "labels": [
+      {
+        "cwe": "CWE-326",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "filename": "CWE-327_codeql_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-327",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "filename": "CWE-327_codeql_2.py",
+    "labels": [
+      {
+        "cwe": "CWE-326",
+        "line": 8
+      }
+    ]
+  },
+  {
+    "filename": "CWE-327_codeql_4.py",
+    "labels": [
+      {
+        "cwe": "CWE-327",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "filename": "CWE-347_sonar_2.py",
+    "labels": [
+      {
+        "cwe": "CWE-287",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "filename": "CWE-425_author_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 10
+      }
+    ]
+  },
+  {
+    "filename": "CWE-502_author_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-502",
+        "line": 11
+      }
+    ]
+  },
+  {
+    "filename": "CWE-502_codeql_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-502",
+        "line": 8
+      }
+    ]
+  },
+  {
+    "filename": "CWE-502_mitre_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-502",
+        "line": 9
+      },
+      {
+        "cwe": "CWE-502",
+        "line": 9
+      }
+    ]
+  },
+  {
+    "filename": "CWE-502_sonar_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-502",
+        "line": 11
+      }
+    ]
+  },
+  {
+    "filename": "CWE-522_pearce_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-327",
+        "line": 16
+      }
+    ]
+  },
+  {
+    "filename": "CWE-601_codeql_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-601",
+        "line": 10
+      }
+    ]
+  },
+  {
+    "filename": "CWE-601_sonar_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-601",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "filename": "CWE-601_sonar_2.py",
+    "labels": [
+      {
+        "cwe": "CWE-601",
+        "line": 8
+      }
+    ]
+  },
+  {
+    "filename": "CWE-605_author_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-200",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "filename": "CWE-643_sonar_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 17
+      }
+    ]
+  },
+  {
+    "filename": "CWE-732_author_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-276",
+        "line": 8
+      }
+    ]
+  },
+  {
+    "filename": "CWE-759_mitre_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-327",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "filename": "CWE-918_codeql_1.py",
+    "labels": [
+      {
+        "cwe": "CWE-918",
+        "line": 12
+      },
+      {
+        "cwe": "CWE-918",
+        "line": 12
+      }
+    ]
+  },
+  {
+    "filename": "CWE-918_codeql_2.py",
+    "labels": [
+      {
+        "cwe": "CWE-918",
+        "line": 11
+      }
+    ]
+  },
+  {
+    "filename": "XSS.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 9
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 13
+      }
+    ]
+  },
+  {
+    "filename": "XSS_assign_to_other_var.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 11
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 15
+      }
+    ]
+  },
+  {
+    "filename": "XSS_call.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 18
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 22
+      }
+    ]
+  },
+  {
+    "filename": "XSS_form.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 15
+      },
+      {
+        "cwe": "CWE-614",
+        "line": 16
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 21
+      }
+    ]
+  },
+  {
+    "filename": "XSS_no_vuln.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 10
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 14
+      }
+    ]
+  },
+  {
+    "filename": "XSS_reassign.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 11
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 15
+      }
+    ]
+  },
+  {
+    "filename": "XSS_sanitised.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 12
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 16
+      }
+    ]
+  },
+  {
+    "filename": "XSS_url.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 9
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 13
+      }
+    ]
+  },
+  {
+    "filename": "XSS_variable_assign.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 11
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 15
+      }
+    ]
+  },
+  {
+    "filename": "XSS_variable_assign_no_vuln.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 12
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 16
+      }
+    ]
+  },
+  {
+    "filename": "XSS_variable_multiple_assign.py",
+    "labels": [
+      {
+        "cwe": "CWE-79",
+        "line": 15
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 20
+      }
+    ]
+  },
+  {
+    "filename": "command_injection.py",
+    "labels": [
+      {
+        "cwe": "CWE-78",
+        "line": 18
+      },
+      {
+        "cwe": "CWE-78",
+        "line": 18
+      },
+      {
+        "cwe": "CWE-78",
+        "line": 18
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 35
+      }
+    ]
+  },
+  {
+    "filename": "ensure_saved_scope.py",
+    "labels": [
+      {
+        "cwe": "CWE-489",
+        "line": 25
+      }
+    ]
+  },
+  {
+    "filename": "inter_command_injection.py",
+    "labels": [
+      {
+        "cwe": "CWE-78",
+        "line": 15
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 38
+      }
+    ]
+  },
+  {
+    "filename": "inter_command_injection_2.py",
+    "labels": [
+      {
+        "cwe": "CWE-78",
+        "line": 22
+      },
+      {
+        "cwe": "CWE-78",
+        "line": 22
+      },
+      {
+        "cwe": "CWE-78",
+        "line": 22
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 39
+      }
+    ]
+  },
+  {
+    "filename": "multi_chain.py",
+    "labels": [
+      {
+        "cwe": "CWE-78",
+        "line": 16
+      },
+      {
+        "cwe": "CWE-78",
+        "line": 16
+      },
+      {
+        "cwe": "CWE-78",
+        "line": 16
+      }
+    ]
+  },
+  {
+    "filename": "path_traversal.py",
+    "labels": [
+      {
+        "cwe": "CWE-489",
+        "line": 15
+      }
+    ]
+  },
+  {
+    "filename": "path_traversal_sanitised.py",
+    "labels": [
+      {
+        "cwe": "CWE-489",
+        "line": 15
+      }
+    ]
+  },
+  {
+    "filename": "path_traversal_sanitised_2.py",
+    "labels": [
+      {
+        "cwe": "CWE-489",
+        "line": 15
+      }
+    ]
+  },
+  {
+    "filename": "render_ids.py",
+    "labels": [
+      {
+        "cwe": "CWE-489",
+        "line": 17
+      }
+    ]
+  },
+  {
+    "filename": "simple_vulnerability.py",
+    "labels": [
+      {
+        "cwe": "CWE-95",
+        "line": 4
+      }
+    ]
+  },
+  {
+    "filename": "sqli.py",
+    "labels": [
+      {
+        "cwe": "CWE-89",
+        "line": 26
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 42
+      }
+    ]
+  },
+  {
+    "filename": "yield.py",
+    "labels": [
+      {
+        "cwe": "CWE-78",
+        "line": 16
+      },
+      {
+        "cwe": "CWE-489",
+        "line": 21
+      }
+    ]
+  }
+]

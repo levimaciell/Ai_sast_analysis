@@ -9,13 +9,14 @@ RUN ln -sf python3 /usr/bin/python
 
 WORKDIR /app
 
-COPY . /app
+COPY requirements.txt /app/
 
 RUN python3 -m venv bandit-env && \
     . bandit-env/bin/activate && \
     pip install --upgrade pip && \
-    pip install -r requirements.txt
+    pip install --no-cache-dir -r requirements.txt
 
+COPY . /app
 
 RUN chmod +x run_sast.sh
 

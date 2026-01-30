@@ -7,6 +7,7 @@ from config import settings
 
 MAX_TRIES = settings.MAX_RETRY_ATTEMPTS
 RETRY_DELAY = settings.RETRY_DELAY_SECONDS
+BASE_DIRECTORY = settings.BASE_DIRECTORY
 
 def build_prompt(vul_code: str, labels2: list[str]) -> str:
     return (
@@ -39,7 +40,6 @@ def getAiCaller(ai: str):
 def main():
     parser = argparse.ArgumentParser(description="Executa IA como assistente SAST em todos os arquivos python que existirem em um diretório")
 
-    parser.add_argument("-sc", required=True, help="Diretório contendo o código fonte para a IA avaliar")
     parser.add_argument("-l", required=True, help="Arquivo json contendo a análise feita pela ferramenta de sast")
     parser.add_argument("-o", required=True, help="Caminho do output gerado pela IA")
     parser.add_argument("-ai", required=True, help="Nome da IA a ser utilizada")
@@ -65,7 +65,7 @@ def main():
 
     # Guarda os paths dos arquivos que contém algum tipo de vulnerabilidade
     filesToProcess = []
-    for root, _, files in os.walk(args.sc):
+    for root, _, files in os.walk(BASE_DIRECTORY):
         for file in files:
             if file.endswith(".py") and os.path.basename(file) in arquivosComLabel :
                 filesToProcess.append(os.path.join(root,file))
@@ -93,7 +93,6 @@ def main():
         
         success = False
         last_error = None
-        raw = None
 
         for attempt in range(1, MAX_TRIES, + 1):
             try:
@@ -117,13 +116,14 @@ def main():
                 time.sleep(RETRY_DELAY)
         
         if not success:
-            print(f"❌ Falha definitiva em {filePath}\n")
-            errors.append({
-                "filename": filePath,
-                "error": last_error,
-                "raw": raw
-            })
-            continue
+            # print(f"❌ Falha definitiva em {filePath}\n")
+            # errors.append({
+            #     "filename": filePath,
+            #     "error": last_error,
+            #     "raw": raw
+            # })
+            raise RuntimeError(f"❌ Falha definitiva em {filePath}\n")
+            
         else:
             results.append({
             "filename": filePath,
