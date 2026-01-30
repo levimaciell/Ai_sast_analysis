@@ -16,8 +16,9 @@ RUN python3 -m venv bandit-env && \
     pip install --upgrade pip && \
     pip install -r requirements.txt
 
-RUN mkdir volume
 
 RUN chmod +x run_sast.sh
 
-CMD ["/bin/bash", "-c", "source bandit-env/bin/activate && exec bash"]
+ENTRYPOINT [ "/app/entrypoint.sh" ]
+
+CMD ["/bin/bash"]
