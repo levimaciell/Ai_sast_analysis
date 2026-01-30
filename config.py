@@ -23,12 +23,18 @@ class Settings:
     CLAUDE_MODEL = _require(os.getenv("CLAUDE_MODEL"), "CLAUDE_MODEL")
     DEEPSEEK_MODEL = _require(os.getenv("DEEPSEEK_MODEL"), "DEEPSEEK_MODEL")
 
-    # ========== EXPERIMENT CONFIGS ==========
+    # ========== GENERAL EXPERIMENT CONFIGS ==========
 
     TEMPERATURE = float(_require(os.getenv("TEMPERATURE"), "TEMPERATURE"))
     MAX_RETRY_ATTEMPTS = int(_require(os.getenv("MAX_RETRY_ATTEMPTS"), "MAX_RETRY_ATTEMPTS"))
     RETRY_DELAY_SECONDS = int(_require(os.getenv("RETRY_DELAY_SECONDS"), "RETRY_DELAY_SECONDS"))
 
+    # ========== OTHER CONFIGS ==========
 
+    MAX_TOKENS_CLAUDE = int(_require(os.getenv("MAX_TOKENS_CLAUDE", "MAX_TOKENS_CLAUDE")))
+    BASE_URL_DEEPSEEK = _require(os.getenv("BASE_URL_DEEPSEEK"), "BASE_URL_DEEPSEEK")
+
+    # ========== BASE DIRECTORY ==========
+    BASE_DIRECTORY = _require(os.getenv("BASE_DIRECTORY"), "BASE_DIRECTORY")
 
 settings = Settings()

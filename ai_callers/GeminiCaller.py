@@ -4,8 +4,8 @@ from google import genai
 import json
 from config import settings
 
-MODEL = "gemini-2.5-flash"
-TEMPERATURE = 0.0
+MODEL = settings.GEMINI_MODEL
+TEMPERATURE = settings.TEMPERATURE
 
 class GeminiCaller(AiCallerStrategy):
 

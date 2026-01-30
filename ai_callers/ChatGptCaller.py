@@ -4,8 +4,8 @@ from openai import OpenAI
 from config import settings
 import json
 
-TEMPERATURE=0.0
-MODEL="gpt-5.2"
+TEMPERATURE = settings.TEMPERATURE
+MODEL = settings.CHAT_GPT_MODEL
 
 class ChatGptCaller(AiCallerStrategy):
 

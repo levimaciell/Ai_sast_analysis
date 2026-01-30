@@ -3,9 +3,10 @@ from openai import OpenAI
 import json
 from config import settings
 
-BASE_URL = 'https://api.deepseek.com'
-MODEL = 'deepseek-chat'
-TEMPERATURE = 0.0
+BASE_URL = settings.BASE_URL_DEEPSEEK
+MODEL = settings.DEEPSEEK_MODEL
+TEMPERATURE = settings.TEMPERATURE
+
 EXAMPLE_JSON = '''
 [
     {

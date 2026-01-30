@@ -3,9 +3,10 @@ import json
 import os
 import time
 from ai_callers import GeminiCaller, ChatGptCaller, DeepseekCaller, ClaudeCaller
+from config import settings
 
-MAX_TRIES = 5
-RETRY_DELAY = 5
+MAX_TRIES = settings.MAX_RETRY_ATTEMPTS
+RETRY_DELAY = settings.RETRY_DELAY_SECONDS
 
 def build_prompt(vul_code: str, labels2: list[str]) -> str:
     return (

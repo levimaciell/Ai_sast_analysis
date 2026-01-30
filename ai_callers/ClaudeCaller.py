@@ -4,11 +4,11 @@ from anthropic import Anthropic
 import json
 from config import settings
 
-MODEL = 'claude-haiku-4-5'
-MAX_TOKENS = 300
-BETA_LIST = ["structured-outputs-2025-11-13"]
-TEMPERATURE = 0.0
+MODEL = settings.CLAUDE_MODEL
+MAX_TOKENS = settings.MAX_TOKENS_CLAUDE
+TEMPERATURE = settings.TEMPERATURE
 
+BETA_LIST = ["structured-outputs-2025-11-13"]
 
 class ClaudeCaller(AiCallerStrategy):
 
