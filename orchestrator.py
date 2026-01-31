@@ -7,8 +7,19 @@ FORMATTED_DIR = Path("/app/volume/sast/formatted")
 AI_DIR = Path("/app/volume/sast/ai_analysis")
 
 sastToRun = [s.strip().lower() for s in settings.SAST_TO_RUN.split(",")]
+aiToRun = [a.strip().lower() for a in settings.AI_TO_RUN.split(",")]
 
 settings.validate()
+
+def validate_sast(sast:str):
+    sastList = set(sastToRun)
+    if sast not in sastList:
+        raise RuntimeError(f"Unknown sast tool: {sast}")
+
+def validate_ai(ai:str):
+    aiList = set(aiToRun)
+    if ai not in aiList:
+        raise RuntimeError(f"Unknown Ai tool: {ai}")
 
 #No caso de adicionar N ferramentas, considerar criar callers para SAST
 def run_sast(target: str):
@@ -49,15 +60,28 @@ def run_formatting_scripts():
         
 
 def run_ai_analysis(ai:str, sast:str):
-    #Comando a ser executado: python Ai_sast_analysis/ai_analysis.py -l results/formatted_bandit.json  -o results/ai_results_bandit_chatGPT.json -ai "chat_gpt"
-    #Passar somente a IA. O -l é pegado do diretório formatted e o -o vai para aquele caminho específico
-    print("bang")
+    validate_ai(ai)
+    validate_sast(sast)
+    
+    pathFormatted = FORMATTED_DIR / f'formatted_{sast}.json'
+    pathSave = AI_DIR / sast / ai / f'ai_analysis_{sast}-{ai}.json'
+    pathSave.parent.mkdir(parents=True, exist_ok=True)
+
+    print(f'[AI_ANALYSIS] ANALISANDO {pathFormatted} com {ai}')
+
+    subprocess.run(["python", "ai_analysis.py", "-l", str(pathFormatted), "-o", str(pathSave), "-ai", ai], check=True)
+
+    print('[AI_ANALYSIS] Execução realizada com sucesso')
 
 
 def main():
 
     run_sast(settings.BASE_DIRECTORY)
     run_formatting_scripts()
+
+    for ai in aiToRun:
+        for sast in sastToRun:
+            run_ai_analysis(ai, sast)
 
     print("[FINAL] Fluxo completo executado com sucesso !!!")
 

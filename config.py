@@ -48,6 +48,7 @@ class Settings:
     MAX_TOKENS_CLAUDE = int(_require_int(os.getenv("MAX_TOKENS_CLAUDE"), "MAX_TOKENS_CLAUDE"))
     BASE_URL_DEEPSEEK = _require(os.getenv("BASE_URL_DEEPSEEK"), "BASE_URL_DEEPSEEK")
     SAST_TO_RUN = _require(os.getenv("SAST_TO_RUN"), "SAST_TO_RUN")
+    AI_TO_RUN = _require(os.getenv("AI_TO_RUN"), "AI_TO_RUN")
 
     # ========== BASE DIRECTORY ==========
     BASE_DIRECTORY = _require(os.getenv("BASE_DIRECTORY"), "BASE_DIRECTORY")
@@ -70,6 +71,8 @@ class Settings:
 
             "MAX_TOKENS_CLAUDE": self.MAX_TOKENS_CLAUDE,
             "BASE_URL_DEEPSEEK": self.BASE_URL_DEEPSEEK,
+            "SAST_TO_RUN": self.SAST_TO_RUN,
+            "AI_TO_RUN": self.AI_TO_RUN,
             "BASE_DIRECTORY": self.BASE_DIRECTORY,
         }
 
