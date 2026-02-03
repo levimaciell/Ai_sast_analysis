@@ -47,7 +47,6 @@ def main():
     args = parser.parse_args()
 
     Caller = getAiCaller(args.ai)
-    print(f'{'='*10} {args.ai} SELECIONADO PARA ANÁLISES {'='*10}')
 
     with open(args.l, "r", encoding="utf-8") as f:
         listaSast = json.load(f)
@@ -70,10 +69,9 @@ def main():
             if file.endswith(".py") and os.path.basename(file) in arquivosComLabel :
                 filesToProcess.append(os.path.join(root,file))
 
-    total = len(filesToProcess)
     results = []
-    errors = []
     processed = 0
+
 
     for filePath in filesToProcess:
         processed += 1
@@ -88,15 +86,12 @@ def main():
             labels.append(item['cwe'])
 
         prompt = build_prompt(code, labels)
-
-        print(f"\n[{processed}/{total}] 🔹 Chamando IA para: {filePath} ...")
         
         success = False
         last_error = None
 
         for attempt in range(1, MAX_TRIES, + 1):
             try:
-                print(f"🔁 Tentativa {attempt}/{MAX_TRIES}")
 
                 ai_result = Caller.requestAi(prompt)
                  
@@ -116,12 +111,6 @@ def main():
                 time.sleep(RETRY_DELAY)
         
         if not success:
-            # print(f"❌ Falha definitiva em {filePath}\n")
-            # errors.append({
-            #     "filename": filePath,
-            #     "error": last_error,
-            #     "raw": raw
-            # })
             raise RuntimeError(f"❌ Falha definitiva em {filePath}\n")
             
         else:
@@ -134,14 +123,6 @@ def main():
     with open(args.o, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
 
-    print(f"\n🎯 Concluído! {processed}/{total} arquivos processados.")
-
-    if errors:
-        print(f"⚠️ Ocorreram {len(errors)} erros. Veja: erro_ia_log.json")
-        with open("erro_ia_log.json", "w", encoding="utf-8") as ef:
-            json.dump(errors, ef, indent=2, ensure_ascii=False)
-    else:
-        print("✅ Nenhum erro detectado durante as requisições à IA.")
 
 
 if __name__ == "__main__":
