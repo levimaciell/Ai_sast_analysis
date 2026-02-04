@@ -30,11 +30,11 @@
       },
       {
         "label": "CWE-89",
-        "line_of_code": 39
+        "line_of_code": 38
       },
       {
         "label": "CWE-489",
-        "line_of_code": 44
+        "line_of_code": 43
       }
     ]
   },
@@ -61,7 +61,7 @@
     "ai_predictions": [
       {
         "label": "CWE-327",
-        "line_of_code": 16
+        "line_of_code": 14
       }
     ]
   },
@@ -70,7 +70,7 @@
     "ai_predictions": [
       {
         "label": "CWE-79",
-        "line_of_code": 15
+        "line_of_code": 14
       },
       {
         "label": "CWE-489",
@@ -83,11 +83,11 @@
     "ai_predictions": [
       {
         "label": "CWE-79",
-        "line_of_code": 11
+        "line_of_code": 12
       },
       {
         "label": "CWE-614",
-        "line_of_code": 12
+        "line_of_code": 13
       }
     ]
   },
@@ -96,7 +96,7 @@
     "ai_predictions": [
       {
         "label": "CWE-79",
-        "line_of_code": 13
+        "line_of_code": 12
       }
     ]
   },
@@ -114,7 +114,7 @@
     "ai_predictions": [
       {
         "label": "CWE-918",
-        "line_of_code": 13
+        "line_of_code": 14
       }
     ]
   },
@@ -132,11 +132,11 @@
     "ai_predictions": [
       {
         "label": "CWE-79",
-        "line_of_code": 17
+        "line_of_code": 18
       },
       {
         "label": "CWE-489",
-        "line_of_code": 20
+        "line_of_code": 21
       }
     ]
   },
@@ -149,7 +149,7 @@
     "ai_predictions": [
       {
         "label": "CWE-601",
-        "line_of_code": 12
+        "line_of_code": 11
       }
     ]
   },
@@ -158,7 +158,7 @@
     "ai_predictions": [
       {
         "label": "CWE-489",
-        "line_of_code": 15
+        "line_of_code": 17
       }
     ]
   },
@@ -167,28 +167,29 @@
     "ai_predictions": [
       {
         "label": "CWE-79",
-        "line_of_code": 10
+        "line_of_code": 11
       }
     ]
   },
   {
     "filename": "vulnerable_files/files/CWE-116_author_1.py",
-    "ai_predictions": []
+    "ai_predictions": [
+      {
+        "label": "CWE-93",
+        "line_of_code": 9
+      }
+    ]
   },
   {
     "filename": "vulnerable_files/files/command_injection.py",
     "ai_predictions": [
       {
         "label": "CWE-78",
-        "line_of_code": 21
-      },
-      {
-        "label": "CWE-78",
-        "line_of_code": 29
+        "line_of_code": 18
       },
       {
         "label": "CWE-489",
-        "line_of_code": 35
+        "line_of_code": 34
       }
     ]
   },
@@ -197,7 +198,7 @@
     "ai_predictions": [
       {
         "label": "CWE-276",
-        "line_of_code": 7
+        "line_of_code": 8
       }
     ]
   },
@@ -224,7 +225,7 @@
     "ai_predictions": [
       {
         "label": "CWE-326",
-        "line_of_code": 7
+        "line_of_code": 8
       }
     ]
   },
@@ -232,12 +233,8 @@
     "filename": "vulnerable_files/files/CWE-215_codeql_1.py",
     "ai_predictions": [
       {
-        "label": "CWE-668",
-        "line_of_code": 10
-      },
-      {
         "label": "CWE-489",
-        "line_of_code": 10
+        "line_of_code": 12
       }
     ]
   },
@@ -246,7 +243,7 @@
     "ai_predictions": [
       {
         "label": "CWE-489",
-        "line_of_code": 17
+        "line_of_code": 16
       }
     ]
   },
@@ -255,7 +252,7 @@
     "ai_predictions": [
       {
         "label": "CWE-502",
-        "line_of_code": 9
+        "line_of_code": 10
       }
     ]
   },
@@ -277,7 +274,7 @@
     "ai_predictions": [
       {
         "label": "CWE-502",
-        "line_of_code": 11
+        "line_of_code": 15
       }
     ]
   },
@@ -295,11 +292,11 @@
     "ai_predictions": [
       {
         "label": "CWE-78",
-        "line_of_code": 17
+        "line_of_code": 16
       },
       {
         "label": "CWE-489",
-        "line_of_code": 22
+        "line_of_code": 20
       }
     ]
   },
@@ -308,7 +305,7 @@
     "ai_predictions": [
       {
         "label": "CWE-295",
-        "line_of_code": 6
+        "line_of_code": 7
       }
     ]
   },
@@ -326,11 +323,11 @@
     "ai_predictions": [
       {
         "label": "CWE-78",
-        "line_of_code": 23
+        "line_of_code": 21
       },
       {
         "label": "CWE-489",
-        "line_of_code": 39
+        "line_of_code": 40
       }
     ]
   },
@@ -339,7 +336,7 @@
     "ai_predictions": [
       {
         "label": "CWE-79",
-        "line_of_code": 11
+        "line_of_code": 12
       },
       {
         "label": "CWE-489",
@@ -379,7 +376,7 @@
     "ai_predictions": [
       {
         "label": "CWE-502",
-        "line_of_code": 6
+        "line_of_code": 5
       }
     ]
   },
@@ -397,6 +394,10 @@
     "ai_predictions": [
       {
         "label": "CWE-276",
+        "line_of_code": 13
+      },
+      {
+        "label": "CWE-276",
         "line_of_code": 14
       }
     ]
@@ -406,7 +407,7 @@
     "ai_predictions": [
       {
         "label": "CWE-326",
-        "line_of_code": 7
+        "line_of_code": 9
       }
     ]
   },
@@ -473,7 +474,7 @@
     "ai_predictions": [
       {
         "label": "CWE-489",
-        "line_of_code": 13
+        "line_of_code": 16
       }
     ]
   },
@@ -482,7 +483,7 @@
     "ai_predictions": [
       {
         "label": "CWE-79",
-        "line_of_code": 11
+        "line_of_code": 12
       },
       {
         "label": "CWE-489",
@@ -513,13 +514,17 @@
     "ai_predictions": [
       {
         "label": "CWE-489",
-        "line_of_code": 26
+        "line_of_code": 25
       }
     ]
   },
   {
     "filename": "vulnerable_files/files/CWE-094_author_1.py",
     "ai_predictions": [
+      {
+        "label": "CWE-95",
+        "line_of_code": 6
+      },
       {
         "label": "CWE-95",
         "line_of_code": 6
@@ -531,7 +536,7 @@
     "ai_predictions": [
       {
         "label": "CWE-200",
-        "line_of_code": 15
+        "line_of_code": 8
       }
     ]
   },
@@ -549,7 +554,7 @@
     "ai_predictions": [
       {
         "label": "CWE-327",
-        "line_of_code": 6
+        "line_of_code": 7
       }
     ]
   },
@@ -558,20 +563,25 @@
     "ai_predictions": [
       {
         "label": "CWE-78",
-        "line_of_code": 8
+        "line_of_code": 7
       }
     ]
   },
   {
     "filename": "vulnerable_files/files/CWE-022_author_2.py",
-    "ai_predictions": []
+    "ai_predictions": [
+      {
+        "label": "CWE-939",
+        "line_of_code": 7
+      }
+    ]
   },
   {
     "filename": "vulnerable_files/files/inter_command_injection_2.py",
     "ai_predictions": [
       {
         "label": "CWE-78",
-        "line_of_code": 21
+        "line_of_code": 22
       },
       {
         "label": "CWE-489",
@@ -584,15 +594,15 @@
     "ai_predictions": [
       {
         "label": "CWE-79",
-        "line_of_code": 15
-      },
-      {
-        "label": "CWE-614",
         "line_of_code": 16
       },
       {
+        "label": "CWE-614",
+        "line_of_code": 17
+      },
+      {
         "label": "CWE-489",
-        "line_of_code": 21
+        "line_of_code": 22
       }
     ]
   },
@@ -601,7 +611,7 @@
     "ai_predictions": [
       {
         "label": "CWE-489",
-        "line_of_code": 14
+        "line_of_code": 15
       }
     ]
   },
@@ -617,6 +627,14 @@
   {
     "filename": "vulnerable_files/files/CWE-080_author_1.py",
     "ai_predictions": [
+      {
+        "label": "CWE-79",
+        "line_of_code": 11
+      },
+      {
+        "label": "CWE-79",
+        "line_of_code": 11
+      },
       {
         "label": "CWE-79",
         "line_of_code": 11

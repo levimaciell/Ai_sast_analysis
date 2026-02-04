@@ -97,18 +97,33 @@ def main():
 
     print('[STEP 3] Executando análises de IA')
 
-    tasks = []
+    # tasks = []
 
-    with ThreadPoolExecutor(max_workers=len(aiToRun)) as executor:
-        for ai in aiToRun:
-            for sast in sastToRun:
-                tasks.append(
-                    executor.submit(run_ai_analysis, ai, sast)
-                )
+    # with ThreadPoolExecutor(max_workers=len(aiToRun)) as executor:
+    #     for ai in aiToRun:
+    #         for sast in sastToRun:
+    #             tasks.append(
+    #                 executor.submit(run_ai_analysis, ai, sast)
+    #             )
 
-    for future in as_completed(tasks):
-        future.result()
+    # for future in as_completed(tasks):
+    #     future.result()
 
+    MAX_WORKERS = min(3, len(aiToRun))
+
+    for sast in sastToRun:
+        print(f"[{sast.upper()}] START")
+
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+            futures = [
+                executor.submit(run_ai_analysis, ai, sast)
+                for ai in aiToRun
+            ]
+
+            for future in as_completed(futures):
+                future.result()
+        
+        print(f"[{sast.upper()}] END")
 
     print('Execução realizada com sucesso')
 

@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import re
 from Scripts import functions as fu
+import glob
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 BASE_DIR = BASE_DIR / 'vulnerable_files' / 'labels'
@@ -61,12 +62,14 @@ def mergeCweAndLine(list):
         for d in list
     )
 
+#REWORK
 def getCleanDataframe(path):
     df = pd.read_json(path)
     df['labels'] = df['labels'].apply(mergeCweAndLine)
 
     return df
 
+#REWORK
 def getCleanAiDataframe(path):
     df = pd.read_json(path)
     df['filename'] = df['filename'].apply(os.path.basename)
@@ -81,7 +84,7 @@ def clearAiPreds(list):
         return np.nan
 
     return ",".join(
-        str(f'{d['line of Code']}({d['label']})')
+        str(f'{d['line_of_code']}({d['label']})')
         for d in list
     )
 
@@ -97,3 +100,42 @@ def remove_duplicates(cwe_list):
         return []
     else:
         return sorted(list(set(cwe_list.split(','))))
+    
+
+def loadFormattedSastResults(directory:str):
+    dataframes = []
+
+    path = os.path.join(directory, "*.json")
+
+    for arquivo in glob.glob(path):
+        filename = os.path.basename(arquivo).split('_')[1]
+
+        df = pd.read_json(arquivo).rename(columns={'labels': filename})
+        df[filename] = df[filename].apply(mergeCweAndLine)
+
+        df = apply_normalizations(df, filename)
+
+        dataframes.append(df)
+
+    return dataframes
+
+
+def loadAiAnalysisResults(directory:str):
+    dataframes = []
+
+    for root, _, files in os.walk(directory):
+        for filename in files:
+            if filename.endswith(".json"):
+                path = os.path.join(root, filename)
+
+                cleanFilename = filename.split('ai_analysis_')[1]
+
+                df = pd.read_json(path).rename(columns={'ai_predictions': cleanFilename})
+                
+                df['filename'] = df['filename'].apply(os.path.basename)
+                df[cleanFilename] = df[cleanFilename].apply(clearAiPreds)
+                df = apply_normalizations(df, cleanFilename)
+
+                dataframes.append(df)
+
+    return dataframes
