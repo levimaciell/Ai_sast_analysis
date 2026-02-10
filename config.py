@@ -49,6 +49,7 @@ class Settings:
     BASE_URL_DEEPSEEK = _require(os.getenv("BASE_URL_DEEPSEEK"), "BASE_URL_DEEPSEEK")
     SAST_TO_RUN = _require(os.getenv("SAST_TO_RUN"), "SAST_TO_RUN")
     AI_TO_RUN = _require(os.getenv("AI_TO_RUN"), "AI_TO_RUN")
+    HALLUCINATION_FILTER = bool(_require(os.getenv("HALLUCINATION_FILTER"), "HALLUCINATION_FILTER"))
 
     # ========== BASE DIRECTORY ==========
     BASE_DIRECTORY = _require(os.getenv("BASE_DIRECTORY"), "BASE_DIRECTORY")
@@ -74,6 +75,7 @@ class Settings:
             "SAST_TO_RUN": self.SAST_TO_RUN,
             "AI_TO_RUN": self.AI_TO_RUN,
             "BASE_DIRECTORY": self.BASE_DIRECTORY,
+            "HALLUCINATION_FILTER": self.HALLUCINATION_FILTER,
         }
 
         missing = [

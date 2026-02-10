@@ -36,6 +36,10 @@
       {
         "label": "CWE-918",
         "line_of_code": 11
+      },
+      {
+        "label": "CWE-918",
+        "line_of_code": 12
       }
     ]
   },
@@ -71,7 +75,7 @@
     "ai_predictions": [
       {
         "label": "CWE-79",
-        "line_of_code": 10
+        "line_of_code": 11
       }
     ]
   },
@@ -89,7 +93,7 @@
     "ai_predictions": [
       {
         "label": "CWE-489",
-        "line_of_code": 12
+        "line_of_code": 10
       }
     ]
   },
@@ -255,7 +259,7 @@
     "ai_predictions": [
       {
         "label": "CWE-502",
-        "line_of_code": 13
+        "line_of_code": 15
       }
     ]
   },
@@ -393,7 +397,7 @@
     "ai_predictions": [
       {
         "label": "CWE-89",
-        "line_of_code": 11
+        "line_of_code": 12
       }
     ]
   },
@@ -420,7 +424,7 @@
     "ai_predictions": [
       {
         "label": "CWE-489",
-        "line_of_code": 11
+        "line_of_code": 10
       }
     ]
   },
@@ -563,7 +567,7 @@
       },
       {
         "label": "CWE-614",
-        "line_of_code": 16
+        "line_of_code": 17
       }
     ]
   },

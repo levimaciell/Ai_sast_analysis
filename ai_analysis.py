@@ -8,6 +8,7 @@ from config import settings
 MAX_TRIES = settings.MAX_RETRY_ATTEMPTS
 RETRY_DELAY = settings.RETRY_DELAY_SECONDS
 BASE_DIRECTORY = settings.BASE_DIRECTORY
+HALLUCIONATION_FILTER = settings.HALLUCINATION_FILTER
 
 def build_prompt(vul_code: str, labels2: list[str]) -> str:
     return (
@@ -94,6 +95,17 @@ def main():
             try:
 
                 ai_result = Caller.requestAi(prompt)
+
+                if(HALLUCIONATION_FILTER):
+                    filteredResult = []
+
+                    for obj in ai_result:
+                        if obj['label'] in labels:
+                            filteredResult.append(obj)
+                        else:
+                            print(f"HALLUCINATION DETECTED! NOT ADDING RESULT TO THE .json FILE")
+
+                    ai_result = filteredResult
                  
                 success = True
                 break
