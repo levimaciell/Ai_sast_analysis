@@ -1,14 +1,13 @@
 from ai_callers.AiCallerStrategy import AiCallerStrategy
 from ai_callers.Structures import AiResults
-from anthropic import Anthropic
+from anthropic import Anthropic, transform_schema
 import json
 from config import settings
 
 MODEL = settings.CLAUDE_MODEL
 MAX_TOKENS = settings.MAX_TOKENS_CLAUDE
 TEMPERATURE = settings.TEMPERATURE
-
-BETA_LIST = ["structured-outputs-2025-11-13"]
+PERSONA = settings.PERSONA
 
 class ClaudeCaller(AiCallerStrategy):
 
@@ -20,28 +19,25 @@ class ClaudeCaller(AiCallerStrategy):
     
     def requestAi(self, prompt):
         
-        response = self.client.beta.messages.parse(
+        response = self.client.messages.create(
             model= MODEL,
             max_tokens= MAX_TOKENS,
-            betas=BETA_LIST,
+            system=PERSONA,
             messages= [
                 {
                     "role": "user",
                     "content": prompt
                 }
             ],
-            output_format = AiResults,
+            output_config= {
+                "format":{
+                    "type": "json_schema",
+                    "schema": transform_schema(AiResults)
+                }
+            },
             temperature=TEMPERATURE
         )
 
-        responseList = json.loads(response.parsed_output.model_dump_json())
+        responseList = json.loads(response.content[0].text)
+
         return responseList['results']
-
-
-# r = self.client.messages.count_tokens(
-#             model= MODEL,
-#             messages=[{
-#                 "role": "user",
-#                 "content": prompt
-#             }]
-#         )

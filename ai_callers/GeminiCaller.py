@@ -1,11 +1,13 @@
 from ai_callers.AiCallerStrategy import AiCallerStrategy
 from ai_callers.Structures import AiResults
 from google import genai
+from google.genai import types
 import json
 from config import settings
 
 MODEL = settings.GEMINI_MODEL
 TEMPERATURE = settings.TEMPERATURE
+PERSONA = settings.PERSONA
 
 class GeminiCaller(AiCallerStrategy):
 
@@ -19,12 +21,13 @@ class GeminiCaller(AiCallerStrategy):
 
         response = self.client.models.generate_content(
             model=MODEL,
-            contents=prompt,
-            config={
-                'temperature': TEMPERATURE,
-                'response_mime_type': 'application/json',
-                'response_json_schema': AiResults.model_json_schema()
-            }
+            config=types.GenerateContentConfig(
+                temperature=TEMPERATURE,
+                response_mime_type='application/json',
+                response_json_schema= AiResults.model_json_schema(),
+                system_instruction=PERSONA
+            ),
+            contents=prompt
         )
 
         raw = response.text.strip()

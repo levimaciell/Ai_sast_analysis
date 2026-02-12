@@ -21,6 +21,15 @@ def _require_int(value, name):
         return int(value)
     except ValueError:
         raise RuntimeError(f"Invalid int value for {name}: {value}")
+    
+def _require_bool(value, name):
+    value = _require(value, name)
+    if value.lower() in ("true", "1", "yes", "y"):
+        return True
+    if value.lower() in ("false", "0", "no", "n"):
+        return False
+    raise RuntimeError(f"Invalid boolean value for {name}: {value}")
+
 
 class Settings:
     # ========== API KEYS ==========
@@ -49,7 +58,8 @@ class Settings:
     BASE_URL_DEEPSEEK = _require(os.getenv("BASE_URL_DEEPSEEK"), "BASE_URL_DEEPSEEK")
     SAST_TO_RUN = _require(os.getenv("SAST_TO_RUN"), "SAST_TO_RUN")
     AI_TO_RUN = _require(os.getenv("AI_TO_RUN"), "AI_TO_RUN")
-    HALLUCINATION_FILTER = bool(_require(os.getenv("HALLUCINATION_FILTER"), "HALLUCINATION_FILTER"))
+    HALLUCINATION_FILTER = _require_bool(os.getenv("HALLUCINATION_FILTER"), "HALLUCINATION_FILTER")
+    PERSONA = _require(os.getenv("PERSONA"), "PERSONA")
 
     # ========== BASE DIRECTORY ==========
     BASE_DIRECTORY = _require(os.getenv("BASE_DIRECTORY"), "BASE_DIRECTORY")
@@ -76,6 +86,7 @@ class Settings:
             "AI_TO_RUN": self.AI_TO_RUN,
             "BASE_DIRECTORY": self.BASE_DIRECTORY,
             "HALLUCINATION_FILTER": self.HALLUCINATION_FILTER,
+            "PERSONA": self.PERSONA
         }
 
         missing = [

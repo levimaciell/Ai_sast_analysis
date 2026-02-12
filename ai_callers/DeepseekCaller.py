@@ -6,19 +6,7 @@ from config import settings
 BASE_URL = settings.BASE_URL_DEEPSEEK
 MODEL = settings.DEEPSEEK_MODEL
 TEMPERATURE = settings.TEMPERATURE
-
-EXAMPLE_JSON = '''
-[
-    {
-        "label": "CWE-78",
-        "line_of_code": 15
-    },
-    {
-        "label": "CWE-94",
-        "line_of_code": 35
-    }
-]
-'''
+PERSONA = settings.PERSONA
 
 class DeepseekCaller(AiCallerStrategy):
 
@@ -30,12 +18,11 @@ class DeepseekCaller(AiCallerStrategy):
 
     def requestAi(self, prompt):
 
-        modifiedPrompt = f'{prompt}\n Example Json: \n {EXAMPLE_JSON}'
-
         response = self.client.chat.completions.create(
             model=MODEL,
             messages=[
-                {"role": "user", "content": modifiedPrompt}
+                {"role": "system", "content": PERSONA},
+                {"role": "user", "content": prompt}
             ],
             response_format={'type':'json_object'},
             temperature=TEMPERATURE,

@@ -6,6 +6,7 @@ import json
 
 TEMPERATURE = settings.TEMPERATURE
 MODEL = settings.CHAT_GPT_MODEL
+PERSONA = settings.PERSONA
 
 class ChatGptCaller(AiCallerStrategy):
 
@@ -19,9 +20,18 @@ class ChatGptCaller(AiCallerStrategy):
 
         response = self.client.responses.parse(
             model=MODEL,
-            input=prompt,
+            input = [
+                {
+                    "role": "system",
+                    "content": PERSONA
+                },
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
             temperature=TEMPERATURE,
-            text_format=AiResults
+            text_format=AiResults,
         )
 
         resultsList = json.loads(response.output_text)

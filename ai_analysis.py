@@ -10,17 +10,52 @@ RETRY_DELAY = settings.RETRY_DELAY_SECONDS
 BASE_DIRECTORY = settings.BASE_DIRECTORY
 HALLUCIONATION_FILTER = settings.HALLUCINATION_FILTER
 
-def build_prompt(vul_code: str, labels2: list[str]) -> str:
-    return (
-        "Which of the following vulnerabilities from list of vulnerabilities exist "
-        "in the python code which is delimited with triple backticks. also give the "
-        "number of the line of the vulnerability in the code.\n\n"
-        f"Python code:\n'''\n{vul_code}\n'''\n\n"
-        "List of vulnerabilities:\n"
-        + ", ".join(labels2) +
-        "\n\nFormat your response as a list of JSON objects with \"label\" and \"line of Code\" "
-        "as the keys for each element. Only answer with JSON."
-    )
+def build_prompt(vul_code: str, vuln_sast_list: list[str]) -> str:
+    example_return =  '''
+    [
+      {
+        "label": "CWE-XXX",
+        "line_of_code": <integer>
+      }
+    ]
+    '''
+
+    prompt =  f'''
+<objective>
+    Your goal is NOT to discover new vulnerabilities.
+    Your goal is ONLY to validate whether the vulnerabilities reported by a SAST tool listed below are actually present in the given source code.
+</objective>
+
+<rules>
+    - Use ONLY the provided source code as evidence.
+    - Use ONLY the vulnerabilities listed below. Do NOT add, infer, or suggest new CWEs.
+    - A vulnerability should be reported only if it is clearly supported by the source code.
+    - If none of the listed vulnerabilities are confirmed, return an empty JSON array: [].
+    - Output must be valid JSON only.
+</rules>
+
+<expected_output>
+
+{example_return}
+
+</expected_output>
+
+<source_code>
+
+{vul_code}
+
+</source_code>
+
+<sast_vulnerabilities>
+
+{vuln_sast_list}
+
+</sast_vulnerabilities>
+'''
+
+    return prompt
+
+
 
 def getAiCaller(ai: str):
     callers = {
@@ -84,9 +119,9 @@ def main():
 
         labels = []
         for item in labelsByFile.get(filename):
-            labels.append(item['cwe'])
+            labels.append(item)
 
-        prompt = build_prompt(code, labels)
+        prompt = build_prompt(code, json.dumps(labels))
         
         success = False
         last_error = None
@@ -100,10 +135,17 @@ def main():
                     filteredResult = []
 
                     for obj in ai_result:
-                        if obj['label'] in labels:
+                        cweList = []
+                        for item in labels:
+                            cweList.append(item['cwe'])
+
+                        if obj['label'] in cweList:
                             filteredResult.append(obj)
                         else:
                             print(f"HALLUCINATION DETECTED! NOT ADDING RESULT TO THE .json FILE")
+                            print(f'Lista original: {labels}')
+                            print(f'Lista da IA: {ai_result}')
+
 
                     ai_result = filteredResult
                  
